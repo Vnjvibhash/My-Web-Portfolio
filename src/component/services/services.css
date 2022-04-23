@@ -1,0 +1,87 @@
+.services__container{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat( 2 , 1fr );
+    /* column-gap: 2rem; */
+    gap: 2rem;
+}
+
+.service {
+    background-color: var(--color-bg-variant);
+    border-radius: 0 0 2rem 2rem;
+    border: 1px solid var(--color-primary);
+    height: fit-content;
+    transition: var(--transition);
+}
+
+.service:hover {
+    background-color: transparent;
+    border-color: var(--color-primary-variant);
+}
+
+.service:hover .service__head{
+    background-color:var(--color-primary-variant);
+    border: 1px solid var(--color-primary);
+}
+.service:hover .service__head h3{
+    color: var(--color-primary);
+}
+
+.service__head {
+    background-color: var(--color-primary);
+    border-radius: 0 0 2rem 2rem;
+    border: 1px solid transparent;
+    padding: 2rem ;
+    box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.service__head > h3 {
+    color: var(--color-bg);
+    font-size: 1rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.service__list  {
+    padding: 2rem;
+    padding-left: 7rem;
+}
+
+.service__list li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.service__list-icon {
+    color: var(--color-primary);
+    margin-top: 6px;
+}
+
+.service__list p {
+    font-size: 0.9rem;
+}
+
+
+/* ================= MEDIA QUERIES ( MEDIUM DEVICES ) =================== */
+
+@media screen and ( max-width: 1024px) {
+    .services__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .service {
+        height: auto;
+    }
+}
+
+
+/* ================= MEDIA QUERIES ( SMALL DEVICES ) =================== */
+
+@media screen and ( max-width: 600px) {
+    .services__container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
